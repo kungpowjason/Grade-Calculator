@@ -7,4 +7,18 @@ public class Assignment {
 		this.pctgrade = pctgrade;
 		this.pcttotalworth = pcttotalworth;
 	}
+	/**
+	 * Getter for Percent Grade.
+	 * @return
+	 */
+	public int getPctGrade(){
+		return pctgrade;
+	}
+	/**
+	 * Getter for Percent of the Total Worth.
+	 * @return
+	 */
+	public int getPctTotalWorth(){
+		return pcttotalworth;
+	}
 }

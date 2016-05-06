@@ -6,9 +6,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
+import gradecalculator.model.FEGCalculator;
+
 public class SelectMinimumGradeController implements ActionListener{
+	FEGCalculator fegc;
 	JLabel gradereq;
-	public SelectMinimumGradeController(JLabel gradereq) {
+	public SelectMinimumGradeController(FEGCalculator fegc, JLabel gradereq) {
+		this.fegc = fegc;
 		this.gradereq = gradereq;
 	}
 	/** Listens to the combo box. */

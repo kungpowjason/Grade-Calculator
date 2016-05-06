@@ -63,7 +63,7 @@ public class Application extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// create new panel (MainMenu) 
-		GradeEditorPanel gep = new GradeEditorPanel();
+		GradeEditorPanel gep = new GradeEditorPanel(fegc);
 		// set location and size relative to JFrame
 		gep.setBounds((int)Screen.width/4, 0, (int)Screen.width/2, (int)Screen.height/2);
 		gep.setup();
