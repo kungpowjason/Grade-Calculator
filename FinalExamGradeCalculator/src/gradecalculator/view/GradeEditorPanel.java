@@ -1,8 +1,5 @@
 package gradecalculator.view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -40,7 +37,7 @@ public class GradeEditorPanel extends JPanel{
 		gradetwtf = new JTextField[numassignments];
 		for (int i = 0; i < numassignments; i++) {
 			gradepcttf[i] = new JTextField();
-			gradepcttf[i].setBounds(0, (int) getHeight() * i / numassignments, tfwidth, tfheight);
+			gradepcttf[i].setBounds(Screen.width/4, (int) getHeight() * i / numassignments, tfwidth, tfheight);
 			add(gradepcttf[i]);
 			gradetwtf[i] = new JTextField();
 			gradetwtf[i].setBounds(gradepcttf[i].getWidth()+gradepcttf[i].getX(), (int) getHeight() * i / numassignments, tfwidth, tfheight);
@@ -63,7 +60,6 @@ public class GradeEditorPanel extends JPanel{
 		gradeList.setBounds((int) (Screen.width * 0.8), (int) (Screen.height * 0.1),(int) (Screen.width * 0.1), (int) (Screen.height * 0.05));
 		((JLabel) gradeList.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		add(gradeList);
-		//gradeList.setSelectedIndex(2);
 		gradeList.addActionListener(new SelectMinimumGradeController(fegc,gradereq));
 		repaint();
 	}
