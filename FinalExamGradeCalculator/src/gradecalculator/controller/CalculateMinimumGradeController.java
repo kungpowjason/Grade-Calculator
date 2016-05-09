@@ -11,19 +11,22 @@ import javax.swing.JTextField;
 
 import gradecalculator.model.Assignment;
 import gradecalculator.model.FEGCalculator;
+import gradecalculator.view.GradeInputBox;
 
 public class CalculateMinimumGradeController extends MouseAdapter {
 	FEGCalculator fegc;
+	GradeInputBox ginputbox;
 	JTextField[] gradepcttf;
 	JTextField[] gradetwtf;
 	JLabel gradereq;
 
-	public CalculateMinimumGradeController(FEGCalculator fegc, JTextField[] gradepcttf, JTextField[] gradetwtf,
+	public CalculateMinimumGradeController(FEGCalculator fegc, GradeInputBox ginputbox,
 			JLabel gradereq) {
 		this.fegc = fegc;
+		this.ginputbox = ginputbox;
 		this.gradereq = gradereq;
-		this.gradepcttf = gradepcttf;
-		this.gradetwtf = gradetwtf;
+		this.gradepcttf = ginputbox.getGradePct();
+		this.gradetwtf = ginputbox.getGradeTotalWorth();
 	}
 
 	/** Listens to the combo box. */

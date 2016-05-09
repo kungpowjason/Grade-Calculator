@@ -14,18 +14,13 @@ import gradecalculator.model.Screen;
 
 public class GradeEditorPanel extends JPanel{
 	FEGCalculator fegc;
-	
-	JTextField[] gradepcttf;
-	JTextField[] gradetwtf;
+
+	GradeInputBox ginputbox;
 	JComboBox gradeList;
 	JButton calcmingrade;
 	JLabel gradereq;
 
 	String[] gradeStrings = { "A", "B", "C" };
-	int numassignments = 10;
-
-	int tfwidth = 100;
-	int tfheight = 20;
 
 	public GradeEditorPanel(FEGCalculator fegc) {
 		this.fegc = fegc;
@@ -33,17 +28,11 @@ public class GradeEditorPanel extends JPanel{
 	}
 
 	public void setup() {
-		gradepcttf = new JTextField[numassignments];
-		gradetwtf = new JTextField[numassignments];
-		for (int i = 0; i < numassignments; i++) {
-			gradepcttf[i] = new JTextField();
-			gradepcttf[i].setBounds(Screen.width/4, (int) getHeight() * i / numassignments, tfwidth, tfheight);
-			add(gradepcttf[i]);
-			gradetwtf[i] = new JTextField();
-			gradetwtf[i].setBounds(gradepcttf[i].getWidth()+gradepcttf[i].getX(), (int) getHeight() * i / numassignments, tfwidth, tfheight);
-			add(gradetwtf[i]);
-			
-		}
+		
+		ginputbox = new GradeInputBox(fegc);
+		ginputbox.setBounds(0, 0, Screen.width/2, Screen.height);
+		ginputbox.setup();
+		add(ginputbox);
 		
 		// Test to see if controllers work
 		gradereq = new JLabel();
@@ -51,8 +40,9 @@ public class GradeEditorPanel extends JPanel{
 		add(gradereq);
 		
 		calcmingrade = new JButton();
-		calcmingrade.setBounds(400, 400, 50, 50);
-		calcmingrade.addMouseListener(new CalculateMinimumGradeController(fegc, gradepcttf, gradetwtf, gradereq));
+		calcmingrade.setBounds(400, 400, 100, 50);
+		calcmingrade.addMouseListener(new CalculateMinimumGradeController(fegc, ginputbox, gradereq));
+		calcmingrade.setText("Calculate");
 		add(calcmingrade);
 			
 
@@ -62,5 +52,12 @@ public class GradeEditorPanel extends JPanel{
 		add(gradeList);
 		gradeList.addActionListener(new SelectMinimumGradeController(fegc,gradereq));
 		repaint();
+	}
+	/**
+	 * Getter for GradeInputBox ginput.
+	 * @return
+	 */
+	public GradeInputBox getGradeInputBox(){
+		return ginputbox;
 	}
 }
