@@ -29,15 +29,15 @@ public class GradeEditorPanel extends JPanel{
 
 	public void setup() {
 		
-		ginputbox = new GradeInputBox(fegc);
-		ginputbox.setBounds(0, 0, Screen.width/2, Screen.height);
-		ginputbox.setup();
-		add(ginputbox);
-		
 		// Test to see if controllers work
 		gradereq = new JLabel();
 		gradereq.setBounds(300, 300, 50, 50);
 		add(gradereq);
+		
+		ginputbox = new GradeInputBox(fegc);
+		ginputbox.setBounds(0, 0, Screen.width/2, Screen.height);
+		ginputbox.setup();
+		add(ginputbox);
 		
 		calcmingrade = new JButton();
 		calcmingrade.setBounds(400, 400, 100, 50);
@@ -45,12 +45,13 @@ public class GradeEditorPanel extends JPanel{
 		calcmingrade.setText("Calculate");
 		add(calcmingrade);
 			
-
+		
 		gradeList = new JComboBox(gradeStrings);
 		gradeList.setBounds((int) (Screen.width * 0.8), (int) (Screen.height * 0.1),(int) (Screen.width * 0.1), (int) (Screen.height * 0.05));
 		((JLabel) gradeList.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		add(gradeList);
 		gradeList.addActionListener(new SelectMinimumGradeController(fegc,gradereq));
+		
 		repaint();
 	}
 	/**
