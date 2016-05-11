@@ -13,6 +13,7 @@ public class Main {
 		
 		// if using 'app' within the anonymous class generated below, must be marked final.
 		final Application app = new Application(fegc);
+		app.setTitle("Grade Calculator");
 
 		// state how to deal with leaving
 		app.addWindowListener(new WindowAdapter() {
