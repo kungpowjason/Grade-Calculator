@@ -1,5 +1,7 @@
 package gradecalculator.view;
 
+import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -21,7 +23,10 @@ public class GradeInputBox extends JPanel {
 
 	public GradeInputBox(FEGCalculator fegc) {
 		this.fegc = fegc;
+		/** Set size of the InputBox: note that the 4 is just a scaler for in between box distances */
+		setSize(tfwidth * 2, tfheight * (numassignments + 4));
 		setLayout(null);
+		setOpaque(false);
 	}
 
 	/**
@@ -35,6 +40,7 @@ public class GradeInputBox extends JPanel {
 				JLabel gradepcttflbl = new JLabel("Grade (%)", SwingConstants.CENTER);
 				gradepcttflbl.setBounds((int) getWidth() * 0, (int) getHeight() * i / (numassignments + 1), tfwidth,
 						tfheight);
+
 				add(gradepcttflbl);
 				JLabel gradetwtflbl = new JLabel("Total Worth", SwingConstants.CENTER);
 				gradetwtflbl.setBounds(gradepcttflbl.getWidth() + gradepcttflbl.getX() + (int) getWidth() * 0,
@@ -46,7 +52,8 @@ public class GradeInputBox extends JPanel {
 						tfheight);
 				add(gradepcttf[i - 1]);
 				gradetwtf[i - 1] = new JTextField();
-				gradetwtf[i - 1].setBounds(gradepcttf[i-1].getWidth() + gradepcttf[i-1].getX() + (int) getWidth() * 0,
+				gradetwtf[i - 1].setBounds(
+						gradepcttf[i - 1].getWidth() + gradepcttf[i - 1].getX() + (int) getWidth() * 0,
 						(int) getHeight() * i / (numassignments + 1), tfwidth, tfheight);
 				add(gradetwtf[i - 1]);
 			}

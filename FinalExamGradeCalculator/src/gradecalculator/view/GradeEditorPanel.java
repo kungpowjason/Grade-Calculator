@@ -1,5 +1,7 @@
 package gradecalculator.view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -25,6 +27,7 @@ public class GradeEditorPanel extends JPanel{
 	public GradeEditorPanel(FEGCalculator fegc) {
 		this.fegc = fegc;
 		setLayout(null);
+		setBackground(Color.PINK);
 	}
 
 	public void setup() {
@@ -35,7 +38,7 @@ public class GradeEditorPanel extends JPanel{
 		add(gradereq);
 		
 		ginputbox = new GradeInputBox(fegc);
-		ginputbox.setBounds(0, 0, Screen.width/2, Screen.height);
+		ginputbox.setLocation(0, 0);
 		ginputbox.setup();
 		add(ginputbox);
 		
