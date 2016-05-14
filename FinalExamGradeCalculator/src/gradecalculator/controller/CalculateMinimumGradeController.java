@@ -43,7 +43,11 @@ public class CalculateMinimumGradeController extends MouseAdapter {
 				System.out.println("No inputs");
 			}
 		}
-		String mingrade = String.valueOf(fegc.calculateMinReqGrade(50)*100);
+		double pctoftotal = fegc.calculateMinReqGrade(50)*100;
+		if(Double.isNaN(pctoftotal)){
+			pctoftotal = 0.0;
+		}
+		String mingrade = String.valueOf(pctoftotal);
 		gradereq.setText(mingrade + "%");
 	}
 }
