@@ -5,6 +5,7 @@ import java.awt.event.WindowEvent;
 
 import gradecalculator.model.FEGCalculator;
 import gradecalculator.model.PieChart;
+import gradecalculator.model.Screen;
 import gradecalculator.view.Application;
 
 public class Main {
@@ -17,7 +18,9 @@ public class Main {
 		app.setTitle("Grade Calculator");
 		
 		// Pie Chart Test
-		PieChart demo = new PieChart("Comparison", "Which operating system are you using?");
+		PieChart demo = new PieChart("Grade Worth Distribution", "Grade Total");
+		demo.setSize((int)(Screen.width * 0.5), (int)(Screen.height * 0.5));
+		demo.setLocation((int)(Screen.width * 0.02), (int)(Screen.height * 0.98 - demo.getSize().getHeight()));
         demo.pack();
         demo.setVisible(true);
         app.add(demo);

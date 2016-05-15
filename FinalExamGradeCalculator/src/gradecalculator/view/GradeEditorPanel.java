@@ -36,7 +36,7 @@ public class GradeEditorPanel extends JPanel {
 
 		// Test to see if controllers work
 		gradereq = new JLabel();
-		gradereq.setBounds(300, 300, 50, 50);
+		gradereq.setBounds((int) (Screen.width * 0.8), 500, 50, 50);
 		add(gradereq);
 
 		ginputbox = new GradeInputBox(fegc);
@@ -45,13 +45,13 @@ public class GradeEditorPanel extends JPanel {
 		add(ginputbox);
 
 		calcmingrade = new JButton();
-		calcmingrade.setBounds(400, 400, 100, 50);
+		calcmingrade.setBounds((int) (Screen.width * 0.8), 400, 100, 50);
 		calcmingrade.addMouseListener(new CalculateMinimumGradeController(fegc, ginputbox, gradereq));
 		calcmingrade.setText("Calculate");
 		add(calcmingrade);
 
 		clearbtn = new JButton();
-		clearbtn.setBounds(400, 300, 100, 50);
+		clearbtn.setBounds((int) (Screen.width * 0.8), 300, 100, 50);
 		clearbtn.addMouseListener(new ClearInputController(fegc, ginputbox, gradereq));
 		clearbtn.setText("Clear");
 		add(clearbtn);

@@ -38,9 +38,10 @@ public class PieChart extends JInternalFrame {
 
     private  PieDataset createDataset() {
         DefaultPieDataset result = new DefaultPieDataset();
-        result.setValue("Linux", 29);
-        result.setValue("Mac", 20);
-        result.setValue("Windows", 51);
+        result.setValue("Exam 1", 20);
+        result.setValue("Exam 2", 20);
+        result.setValue("Homeworks", 20);
+        result.setValue("Projects", 40);
         return result;
         
     }
