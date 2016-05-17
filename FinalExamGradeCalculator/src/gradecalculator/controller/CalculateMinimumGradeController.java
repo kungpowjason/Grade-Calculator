@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import gradecalculator.model.Assignment;
 import gradecalculator.model.FEGCalculator;
+import gradecalculator.model.PieChart;
 import gradecalculator.view.GradeInputBox;
 
 public class CalculateMinimumGradeController extends MouseAdapter {
@@ -19,12 +20,14 @@ public class CalculateMinimumGradeController extends MouseAdapter {
 	JTextField[] gradepcttf;
 	JTextField[] gradetwtf;
 	JLabel gradereq;
+	PieChart piechart;
 
 	public CalculateMinimumGradeController(FEGCalculator fegc, GradeInputBox ginputbox,
-			JLabel gradereq) {
+			JLabel gradereq, PieChart piechart) {
 		this.fegc = fegc;
 		this.ginputbox = ginputbox;
 		this.gradereq = gradereq;
+		this.piechart = piechart;
 		this.gradepcttf = ginputbox.getGradePct();
 		this.gradetwtf = ginputbox.getGradeTotalWorth();
 	}

@@ -33,7 +33,7 @@ public class PieChart extends JInternalFrame {
     
     
 /**
-     * Creates a sample dataset 
+     * Creates a sample dataset.
      */
 
     private  PieDataset createDataset() {
