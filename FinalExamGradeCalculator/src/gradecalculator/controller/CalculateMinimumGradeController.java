@@ -9,6 +9,9 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+
 import gradecalculator.model.Assignment;
 import gradecalculator.model.FEGCalculator;
 import gradecalculator.model.PieChart;
@@ -22,8 +25,8 @@ public class CalculateMinimumGradeController extends MouseAdapter {
 	JLabel gradereq;
 	PieChart piechart;
 
-	public CalculateMinimumGradeController(FEGCalculator fegc, GradeInputBox ginputbox,
-			JLabel gradereq, PieChart piechart) {
+	public CalculateMinimumGradeController(FEGCalculator fegc, GradeInputBox ginputbox, JLabel gradereq,
+			PieChart piechart) {
 		this.fegc = fegc;
 		this.ginputbox = ginputbox;
 		this.gradereq = gradereq;
@@ -34,6 +37,8 @@ public class CalculateMinimumGradeController extends MouseAdapter {
 
 	/** Listens to the combo box. */
 	public void mousePressed(MouseEvent me) {
+		DefaultPieDataset dpd = piechart.getDefaultPieDataset();
+		dpd.clear();
 		fegc.clearAssignments();
 		for (int i = 0; i < gradepcttf.length; i++) {
 			try {
@@ -41,16 +46,18 @@ public class CalculateMinimumGradeController extends MouseAdapter {
 				Assignment assignment = new Assignment(Integer.parseInt(gradepcttf[i].getText()),
 						Integer.parseInt(gradetwtf[i].getText()));
 				fegc.addAssignment(assignment);
+				dpd.setValue("Assignment " + (i + 1), Integer.parseInt(gradetwtf[i].getText()));
 				System.out.println("Success");
 			} catch (NumberFormatException nfe) {
 				System.out.println("No inputs");
 			}
 		}
-		double pctoftotal = fegc.calculateMinReqGrade(50)*100;
-		if(Double.isNaN(pctoftotal)){
+		double pctoftotal = fegc.calculateMinReqGrade(50) * 100;
+		if (Double.isNaN(pctoftotal)) {
 			pctoftotal = 0.0;
 		}
 		String mingrade = String.valueOf(pctoftotal);
 		gradereq.setText(mingrade + "%");
+		piechart.setup();
 	}
 }

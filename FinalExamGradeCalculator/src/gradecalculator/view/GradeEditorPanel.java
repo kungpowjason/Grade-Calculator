@@ -50,7 +50,8 @@ public class GradeEditorPanel extends JPanel {
 		piechart = new PieChart("Grade Worth Distribution", "Grade Total");
 		piechart.setSize((int)(Screen.width * 0.5), (int)(Screen.height * 0.5));
 		piechart.setLocation((int)(Screen.width * 0.02), (int)(Screen.height * 0.98 - piechart.getSize().getHeight()));
-        piechart.pack();
+        piechart.setup();
+		piechart.pack();
         piechart.setVisible(true);
         add(piechart);
 
