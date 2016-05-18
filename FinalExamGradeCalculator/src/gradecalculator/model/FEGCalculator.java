@@ -64,7 +64,11 @@ public class FEGCalculator {
 	public void clearAssignments(){
 		assignments.clear();
 	}
-
+	/**
+	 * Calculates minimum grade required.
+	 * @param mg
+	 * @return
+	 */
 	public double calculateMinReqGrade(int mg) {
 		double totalpnts = 0.0;
 		double accumulatedpnts = 0.0;
