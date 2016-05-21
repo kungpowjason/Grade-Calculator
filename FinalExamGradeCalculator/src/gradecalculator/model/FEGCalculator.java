@@ -3,7 +3,9 @@ package gradecalculator.model;
 import java.util.ArrayList;
 
 public class FEGCalculator {
+	/** List of assignments */
 	ArrayList<Assignment> assignments;
+	/** minimum grade required */
 	int mingrade;
 
 	public FEGCalculator() {
