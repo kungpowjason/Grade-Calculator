@@ -18,7 +18,9 @@ import gradecalculator.model.PieChart;
 import gradecalculator.view.GradeInputBox;
 
 public class CalculateMinimumGradeController extends MouseAdapter {
+	/** Model */
 	FEGCalculator fegc;
+	/** Gui Elements */
 	GradeInputBox ginputbox;
 	JTextField[] gradepcttf;
 	JTextField[] gradetwtf;
