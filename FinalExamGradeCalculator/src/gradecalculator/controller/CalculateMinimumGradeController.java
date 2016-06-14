@@ -17,6 +17,14 @@ import gradecalculator.model.FEGCalculator;
 import gradecalculator.model.PieChart;
 import gradecalculator.view.GradeInputBox;
 
+/**
+ * Controller for minimum grade calculation button. Press the button and outputs the minimum grade
+ * for the speicific grade.
+ * 
+ * @author ywu
+ *
+ */
+
 public class CalculateMinimumGradeController extends MouseAdapter {
 	FEGCalculator fegc;
 	GradeInputBox ginputbox;
