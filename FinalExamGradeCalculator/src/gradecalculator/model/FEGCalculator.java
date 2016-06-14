@@ -3,7 +3,9 @@ package gradecalculator.model;
 import java.util.ArrayList;
 
 public class FEGCalculator {
+	/** List of assignments */
 	ArrayList<Assignment> assignments;
+	/** minimum grade required */
 	int mingrade;
 
 	public FEGCalculator() {
@@ -64,7 +66,11 @@ public class FEGCalculator {
 	public void clearAssignments(){
 		assignments.clear();
 	}
-
+	/**
+	 * Calculates minimum grade required.
+	 * @param mg
+	 * @return
+	 */
 	public double calculateMinReqGrade(int mg) {
 		double totalpnts = 0.0;
 		double accumulatedpnts = 0.0;

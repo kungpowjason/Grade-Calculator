@@ -8,7 +8,9 @@ package gradecalculator.model;
  *
  */
 public class Assignment {
+	/** Grade relative to the assignment */
 	double pctgrade;
+	/** Percent relative to total grade for class */
 	double pcttotalworth;
 
 	public Assignment(double pctgrade, double pcttotalworth) {
